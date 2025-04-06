@@ -615,10 +615,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Jalanin server
-const PORT = process.env.PORT || 9000;
-app.listen(PORT);
-
 NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
       let mime = '';
       let res = await axios.head(url)
