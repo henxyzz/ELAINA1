@@ -21249,7 +21249,7 @@ case 'report': {
 replynano(` =====[ *DEVELOPER OF DASZYA BOT* ]===== 
 • ᴊᴀɴɢᴀɴ ᴄʜᴀᴛ ꜱᴇᴍʙᴀʀᴀɴɢᴀɴ ᴋᴇ ɴᴏᴍᴏʀ ᴏᴡɴᴇʀ ᴍᴀᴋᴀ ᴀᴋᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ ᴅɪ ʙʟᴏᴋɪʀ
 • ᴊᴀɴɢᴀɴ ᴄᴀʟʟ/ᴛᴇʟᴇᴘᴏɴ ᴏᴡɴᴇʀ ᴛᴀɴᴘᴀ ɪᴢɪɴ • ᴄʜᴀᴛ ʟᴀɴɢꜱᴜɴɢ ᴋᴇ ɪɴᴛɪɴʏᴀ ᴀᴊᴀ , 
-• https://wa.me/6285745522549?text=Lapor+min+fitur+ada+yang+eror+kalo+bisa+di+perbaiki.
+• https://wa.me/6285866034212?text=Lapor+min+fitur+ada+yang+eror+kalo+bisa+di+perbaiki.
 ⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕",`)
 }
 break
@@ -22899,9 +22899,9 @@ console.log(data.toString())
 stream.write(`skyzodev\n`); // Key Token : skyzodev
 stream.write('1\n');
 stream.write('3\n');
-stream.write('https://wa.me/6285624297893\n');
-stream.write('https://whatsapp.com/channel/0029VaYoztA47XeAhs447Y1s\n');
-stream.write('https://chat.whatsapp.com/IP1KjO4OyM97ay2iEsSAFy\n');
+stream.write('https://wa.me/6285866034212\n');
+stream.write('https://whatsapp.com/channel/0029Vaf7kkjGzzKSBcZck73P\n');
+stream.write('https://wa.me/6285866034212\n');
 stream.write('yes\n');
 stream.write('x\n');
 }).stderr.on('data', (data) => {

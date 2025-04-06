@@ -43,7 +43,7 @@ const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 const prefix = ''
-let phoneNumber = "916909137213"
+let phoneNumber = "6285866034212"
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
@@ -601,6 +601,19 @@ const { welcome } = require ('./lib/welcome')
 const iswel = _welcome.includes(anu.id)
 const isLeft = _left.includes(anu.id)
 welcome(iswel, isLeft, NanoBotz, anu)
+})
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// File static
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Endpoint /
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
