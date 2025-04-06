@@ -605,6 +605,9 @@ welcome(iswel, isLeft, NanoBotz, anu)
 
 const express = require('express');
 const path = require('path');
+const http = require('http');
+const os = require('os');
+
 const app = express();
 
 // Serve file statis dari folder 'public'
@@ -613,6 +616,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Endpoint root "/" kirim index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Fungsi buat dapetin IP lokal
+function getLocalIP() {
+  const nets = os.networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      if (net.family === 'IPv4' && !net.internal) return net.address;
+    }
+  }
+}
+
+const server = http.createServer(app);
+
+// Dengerin di port 0 (acak otomatis)
+server.listen(0);
+
+// Ketika server berhasil jalan
+server.on('listening', () => {
+  const port = server.address().port;
+  const localIP = getLocalIP();
+  console.log(`Server Express jalan di:
+  - http://localhost:${port}
+  - http://${localIP}:${port}`);
 });
 
 NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
