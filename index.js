@@ -605,16 +605,19 @@ welcome(iswel, isLeft, NanoBotz, anu)
 
 const express = require('express');
 const path = require('path');
-
 const app = express();
 
-// File static
+// Serve file statis dari folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Endpoint /
+// Endpoint root "/" kirim index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
+});
+
+// Jalanin server
+const PORT = process.env.PORT || 8080;
+app.listen(PORT);
 
 NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
       let mime = '';
