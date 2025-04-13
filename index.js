@@ -621,55 +621,7 @@ NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
      return NanoBotz.sendMessage(jid, { video: await getBuffer(url), caption: caption, mimetype: 'video/mp4', ...options}, { quoted: quoted, ...options })
       }
       if(mime.split("/")[0] === "audio"){
-     return NanoBotz.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
-      }
-      }
-      
-      /**
-     * 
-     * @param {*} jid 
-     * @param {*} name 
-     * @param [*] values 
-     * @returns 
-     */
-    NanoBotz.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return NanoBotz.sendMessage(jid, { poll: { name, values, selectableCount }}) }
-
-return NanoBotz
-
-}
-NanoBotzInd()
-
-process.on('uncaughtException', function (err) {
-console.log('Caught exception: ', err)
-})
-uffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
-      }
-      }
-      
-      /**
-     * 
-     * @param {*} jid 
-     * @param {*} name 
-     * @param [*] values 
-     * @returns 
-     */
-    NanoBotz.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return NanoBotz.sendMessage(jid, { poll: { name, values, selectableCount }}) }
-
-return NanoBotz
-
-}
-NanoBotzInd()
-
-process.on('uncaughtException', function (err) {
-console.log('Caught exception: ', err)
-})
-ted: quoted, ...options })
-      }
-      }
-      
-      /**
-     * 
-     * @param {*} jid 
+          * @param {*} jid 
      * @param {*} name 
      * @param [*] values 
      * @returns 
