@@ -603,22 +603,6 @@ const isLeft = _left.includes(anu.id)
 welcome(iswel, isLeft, NanoBotz, anu)
 })
 
-const express = require('express');
-const path = require('path');
-const app = express();
-
-// Serve file statis dari folder 'public'
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Endpoint root "/" kirim index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Jalanin server
-const PORT = process.env.PORT || 8080;
-app.listen(PORT);
-
 NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
       let mime = '';
       let res = await axios.head(url)
@@ -638,6 +622,48 @@ NanoBotz.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
       }
       if(mime.split("/")[0] === "audio"){
      return NanoBotz.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
+      }
+      }
+      
+      /**
+     * 
+     * @param {*} jid 
+     * @param {*} name 
+     * @param [*] values 
+     * @returns 
+     */
+    NanoBotz.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return NanoBotz.sendMessage(jid, { poll: { name, values, selectableCount }}) }
+
+return NanoBotz
+
+}
+NanoBotzInd()
+
+process.on('uncaughtException', function (err) {
+console.log('Caught exception: ', err)
+})
+uffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
+      }
+      }
+      
+      /**
+     * 
+     * @param {*} jid 
+     * @param {*} name 
+     * @param [*] values 
+     * @returns 
+     */
+    NanoBotz.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return NanoBotz.sendMessage(jid, { poll: { name, values, selectableCount }}) }
+
+return NanoBotz
+
+}
+NanoBotzInd()
+
+process.on('uncaughtException', function (err) {
+console.log('Caught exception: ', err)
+})
+ted: quoted, ...options })
       }
       }
       
